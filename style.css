@@ -1,0 +1,211 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Corresponde a 10px */
+  font-size: 62.5%;
+
+  --color-orange: #fe8205;
+  --color-dark-orange: #f45611;
+  --color-light-gray: #7e8596;
+  --color-gray: #636978;
+  --color-dark-gray: #414952;
+}
+
+body {
+  background-color: var(--color-orange);
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  background-color: var(--color-dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0;
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  color: white;
+  margin-right: 1rem;
+  font-family: "Bad Script", cursive;
+  font-size: 2.5rem;
+}
+
+header img {
+  height: 5rem;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+label + input {
+  margin-top: 0.5rem;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  padding: 0 0.5rem;
+  justify-content: center;
+}
+
+fieldset + fieldset {
+  margin-top: 1rem;
+}
+
+fieldset legend {
+  width: 100%;
+  text-align: center;
+  background-color: var(--color-orange);
+  color: white;
+  padding: 1rem;
+  border-radius: 5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+fieldset img {
+  height: 5rem;
+}
+
+input {
+  width: 6rem;
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.input-box {
+  width: 8rem;
+  text-align: center;
+}
+
+.input-box + .input-box {
+  margin-left: 5rem;
+}
+
+.meat-options {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.meat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meat-item input + label {
+  margin-top: 0.5rem;
+}
+
+.meat-item img + label {
+  margin-top: 0.5rem;
+}
+
+.drink-options {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.drink-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drink-item input + label {
+  margin-top: 0.5rem;
+}
+
+.drink-item img + label {
+  margin-top: 0.5rem;
+}
+
+.extra-options {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.extra-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.extra-item input + label {
+  margin-top: 0.5rem;
+}
+
+footer {
+  margin-top: 0.5rem;
+  background-color: var(--color-dark-gray);
+}
+
+.author {
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.credit-item {
+  display: inline;
+  color: var(--color-light-gray);
+  font-size: 0.4rem;
+}
+
+.credit-item a {
+  text-decoration: none;
+  color: var(--color-light-gray);
+}
+
+@media screen and (max-width: 425px) {
+  :root {
+    font-size: 50%;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  :root {
+    font-size: 40%;
+  }
+}

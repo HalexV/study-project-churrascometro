@@ -1,1 +1,436 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="./images/churrascometro_icon.svg" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Churrascômetro</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>CHURRASCÔMETRO</h1>
+        <img
+          src="./images/churrascometro_icon.svg"
+          alt="Símbolo do churrascômetro"
+        />
+      </header>
+      <main>
+        <div id="rendering-area">
+          <form>
+            <fieldset>
+              <div class="input-box">
+                <label for="adults">Adultos</label>
+                <input
+                  type="number"
+                  min="1"
+                  name="adults"
+                  id="adults"
+                  required
+                />
+              </div>
+
+              <div class="input-box">
+                <label for="kids">Crianças</label>
+                <input type="number" min="1" name="kids" id="kids" required />
+              </div>
+
+              <div class="input-box">
+                <label for="duration">Duração (hrs)</label>
+                <input
+                  type="number"
+                  min="1"
+                  name="duration"
+                  id="duration"
+                  required
+                />
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Opções de Carnes</legend>
+
+              <div class="meat-options">
+                <div class="meat-item">
+                  <input
+                    type="checkbox"
+                    name="meats"
+                    id="cattle"
+                    value="cattle"
+                  />
+                  <label for="cattle">Boi</label>
+
+                  <img src="./images/vaca.svg" alt="boi" title="Boi" />
+
+                  <label for="percent-cattle">%</label>
+
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    name="percent-cattle"
+                    id="percent-cattle"
+                  />
+                </div>
+
+                <div class="meat-item">
+                  <input type="checkbox" name="meats" id="pork" value="pork" />
+                  <label for="pork">Porco</label>
+                  <img src="./images/porco.svg" alt="Porco" title="Porco" />
+
+                  <label for="percent-pork">%</label>
+
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    name="percent-pork"
+                    id="percent-pork"
+                  />
+                </div>
+
+                <div class="meat-item">
+                  <input type="checkbox" name="meats" id="fish" value="fish" />
+
+                  <label for="fish">Peixes</label>
+                  <img src="./images/peixe.svg" alt="Peixe" title="Peixe" />
+
+                  <label for="percent-fish">%</label>
+
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    name="percent-fish"
+                    id="percent-fish"
+                  />
+                </div>
+
+                <div class="meat-item">
+                  <input
+                    type="checkbox"
+                    name="meats"
+                    id="chicken"
+                    value="chicken"
+                  />
+
+                  <label for="chicken">Frango</label>
+
+                  <img src="./images/frango.svg" alt="Frango" title="Frango" />
+
+                  <label for="percent-chicken">%</label>
+
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    name="percent-chicken"
+                    id="percent-chicken"
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Opções de Bebidas</legend>
+
+              <div class="drink-options">
+                <div class="drink-item">
+                  <input type="checkbox" name="drinks" id="beer" value="beer" />
+
+                  <label for="beer">Cerveja</label>
+
+                  <img
+                    src="./images/cerveja.svg"
+                    alt="Cerveja"
+                    title="Cerveja"
+                  />
+                  <label for="percent-people-beer"
+                    >% das pessoas que bebem</label
+                  >
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    name="percent-people-beer"
+                    id="percent-people-beer"
+                  />
+                </div>
+
+                <div class="drink-item">
+                  <input type="checkbox" name="drinks" id="soda" value="soda" />
+                  <label for="soda">Refrigerante</label>
+
+                  <img
+                    src="./images/refrigerantes.svg"
+                    alt="Refrigerante"
+                    title="Refrigerante"
+                  />
+                  <label for="percent-people-soda"
+                    >% das pessoas que bebem</label
+                  >
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    name="percent-people-soda"
+                    id="percent-people-soda"
+                  />
+                </div>
+
+                <div class="drink-item">
+                  <input
+                    type="checkbox"
+                    name="drinks"
+                    id="juice"
+                    value="juice"
+                  />
+                  <label for="juice">Suco</label>
+
+                  <img
+                    src="./images/suco-de-laranja.svg"
+                    alt="Suco"
+                    title="Suco"
+                  />
+                  <label for="percent-people-juice"
+                    >% das pessoas que bebem</label
+                  >
+                  <input
+                    type="number"
+                    min="1"
+                    max="100"
+                    name="percent-people-juice"
+                    id="percent-people-juice"
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Opções Extras</legend>
+
+              <div class="extra-options">
+                <div class="extra-item">
+                  <input
+                    type="checkbox"
+                    name="extras"
+                    id="manioc"
+                    value="manioc"
+                  />
+
+                  <label for="manioc">Mandioca</label>
+
+                  <img
+                    src="./images/mandioca.svg"
+                    alt="Mandioca"
+                    title="Mandioca"
+                  />
+                </div>
+
+                <div class="extra-item">
+                  <input
+                    type="checkbox"
+                    name="extras"
+                    id="crumbs"
+                    value="crumbs"
+                  />
+
+                  <label for="crumbs">Farofa</label>
+
+                  <img src="./images/farofa.svg" alt="Farofa" title="Farofa" />
+                </div>
+
+                <div class="extra-item">
+                  <input
+                    type="checkbox"
+                    name="extras"
+                    id="vinagrete"
+                    value="vinagrete"
+                  />
+
+                  <label for="vinagrete">Vinagrete</label>
+
+                  <img
+                    src="./images/vinagrete.svg"
+                    alt="Vinagrete"
+                    title="Vinagrete"
+                  />
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </main>
+
+      <footer>
+        <a
+          class="author"
+          href="https://www.linkedin.com/in/h%C3%A1lex-viotto-gomes-5375771a0/"
+          target="_blank"
+          >Desenvolvido por: Hálex Viotto Gomes</a
+        >
+        <div class="credits">
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/autores/freepik"
+              title="Freepik"
+              >Freepik</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/icone-gratis/frango_2301880"
+              title="photo3idea_studio"
+              >photo3idea_studio</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/icone-gratis/vaca_2553594"
+              title="photo3idea_studio"
+              >photo3idea_studio</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/icone-gratis/peixe_2553604"
+              title="photo3idea_studio"
+              >photo3idea_studio</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/icone-gratis/porco_2553678"
+              title="photo3idea_studio"
+              >photo3idea_studio</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/autores/photo3idea-studio"
+              title="photo3idea_studio"
+              >photo3idea_studio</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/autores/iconixar"
+              title="iconixar"
+              >iconixar</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/autores/nhor-phai"
+              title="Nhor Phai"
+              >Nhor Phai</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/autores/nhor-phai"
+              title="Nhor Phai"
+              >Nhor Phai</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+          <div class="credit-item">
+            Ícones feitos por
+            <a href="https://www.flaticon.com/br/autores/ddara" title="dDara"
+              >dDara</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+          <div class="credit-item">
+            Ícones feitos por
+            <a
+              href="https://www.flaticon.com/br/autores/freepik"
+              title="Freepik"
+              >Freepik</a
+            >
+            from
+            <a href="https://www.flaticon.com/br/" title="Flaticon">
+              www.flaticon.com</a
+            >
+          </div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+          <div class="credit-item"></div>
+        </div>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
