@@ -32,7 +32,7 @@
       </header>
       <main>
         <div id="rendering-area">
-          <form>
+          <form onsubmit="process(event, this)">
             <fieldset>
               <div class="input-box">
                 <label for="adults">Adultos</label>
@@ -72,12 +72,13 @@
                     name="meats"
                     id="cattle"
                     value="cattle"
+                    onchange="toggleDependentInput(this, 'percent-cattle')"
                   />
                   <label for="cattle">Boi</label>
 
                   <img src="./images/vaca.svg" alt="boi" title="Boi" />
 
-                  <label for="percent-cattle">%</label>
+                  <label for="percent-cattle" hidden>%</label>
 
                   <input
                     type="number"
@@ -85,15 +86,23 @@
                     max="100"
                     name="percent-cattle"
                     id="percent-cattle"
+                    value="100"
+                    hidden
                   />
                 </div>
 
                 <div class="meat-item">
-                  <input type="checkbox" name="meats" id="pork" value="pork" />
+                  <input
+                    type="checkbox"
+                    name="meats"
+                    id="pork"
+                    value="pork"
+                    onchange="toggleDependentInput(this, 'percent-pork')"
+                  />
                   <label for="pork">Porco</label>
                   <img src="./images/porco.svg" alt="Porco" title="Porco" />
 
-                  <label for="percent-pork">%</label>
+                  <label for="percent-pork" hidden>%</label>
 
                   <input
                     type="number"
@@ -101,16 +110,24 @@
                     max="100"
                     name="percent-pork"
                     id="percent-pork"
+                    value="100"
+                    hidden
                   />
                 </div>
 
                 <div class="meat-item">
-                  <input type="checkbox" name="meats" id="fish" value="fish" />
+                  <input
+                    type="checkbox"
+                    name="meats"
+                    id="fish"
+                    value="fish"
+                    onchange="toggleDependentInput(this, 'percent-fish')"
+                  />
 
                   <label for="fish">Peixes</label>
                   <img src="./images/peixe.svg" alt="Peixe" title="Peixe" />
 
-                  <label for="percent-fish">%</label>
+                  <label for="percent-fish" hidden>%</label>
 
                   <input
                     type="number"
@@ -118,6 +135,8 @@
                     max="100"
                     name="percent-fish"
                     id="percent-fish"
+                    value="100"
+                    hidden
                   />
                 </div>
 
@@ -127,13 +146,14 @@
                     name="meats"
                     id="chicken"
                     value="chicken"
+                    onchange="toggleDependentInput(this, 'percent-chicken')"
                   />
 
                   <label for="chicken">Frango</label>
 
                   <img src="./images/frango.svg" alt="Frango" title="Frango" />
 
-                  <label for="percent-chicken">%</label>
+                  <label for="percent-chicken" hidden>%</label>
 
                   <input
                     type="number"
@@ -141,6 +161,8 @@
                     max="100"
                     name="percent-chicken"
                     id="percent-chicken"
+                    value="100"
+                    hidden
                   />
                 </div>
               </div>
@@ -151,7 +173,13 @@
 
               <div class="drink-options">
                 <div class="drink-item">
-                  <input type="checkbox" name="drinks" id="beer" value="beer" />
+                  <input
+                    type="checkbox"
+                    name="drinks"
+                    id="beer"
+                    value="beer"
+                    onchange="toggleDependentInput(this, 'percent-people-beer')"
+                  />
 
                   <label for="beer">Cerveja</label>
 
@@ -160,7 +188,7 @@
                     alt="Cerveja"
                     title="Cerveja"
                   />
-                  <label for="percent-people-beer"
+                  <label for="percent-people-beer" hidden
                     >% das pessoas que bebem</label
                   >
                   <input
@@ -169,11 +197,19 @@
                     max="100"
                     name="percent-people-beer"
                     id="percent-people-beer"
+                    value="100"
+                    hidden
                   />
                 </div>
 
                 <div class="drink-item">
-                  <input type="checkbox" name="drinks" id="soda" value="soda" />
+                  <input
+                    type="checkbox"
+                    name="drinks"
+                    id="soda"
+                    value="soda"
+                    onchange="toggleDependentInput(this, 'percent-people-soda')"
+                  />
                   <label for="soda">Refrigerante</label>
 
                   <img
@@ -181,7 +217,7 @@
                     alt="Refrigerante"
                     title="Refrigerante"
                   />
-                  <label for="percent-people-soda"
+                  <label for="percent-people-soda" hidden
                     >% das pessoas que bebem</label
                   >
                   <input
@@ -190,6 +226,8 @@
                     max="100"
                     name="percent-people-soda"
                     id="percent-people-soda"
+                    value="100"
+                    hidden
                   />
                 </div>
 
@@ -199,6 +237,7 @@
                     name="drinks"
                     id="juice"
                     value="juice"
+                    onchange="toggleDependentInput(this, 'percent-people-juice')"
                   />
                   <label for="juice">Suco</label>
 
@@ -207,7 +246,7 @@
                     alt="Suco"
                     title="Suco"
                   />
-                  <label for="percent-people-juice"
+                  <label for="percent-people-juice" hidden
                     >% das pessoas que bebem</label
                   >
                   <input
@@ -216,6 +255,8 @@
                     max="100"
                     name="percent-people-juice"
                     id="percent-people-juice"
+                    value="100"
+                    hidden
                   />
                 </div>
               </div>
@@ -273,6 +314,8 @@
                 </div>
               </div>
             </fieldset>
+
+            <button type="submit">Calcular</button>
           </form>
         </div>
       </main>

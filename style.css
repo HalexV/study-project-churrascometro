@@ -26,7 +26,7 @@ body {
   width: 80%;
   margin: 0 auto;
   background-color: white;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -87,11 +87,6 @@ fieldset img {
   height: 5rem;
 }
 
-input {
-  width: 6rem;
-  text-align: center;
-}
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -102,6 +97,17 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  height: 2rem;
+  font-size: 1.4rem;
+  width: 6rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-dark-gray);
+  text-align: center;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border: 2px solid var(--color-orange);
 }
 
 .input-box {
@@ -169,6 +175,62 @@ input[type="number"] {
   margin-top: 0.5rem;
 }
 
+button {
+  margin: 0.5rem auto 0;
+  display: block;
+  padding: 1rem;
+  width: 20rem;
+  border: 1px solid var(--color-dark-gray);
+  border-radius: 5rem;
+  background-color: var(--color-dark-orange);
+  color: white;
+  font-weight: bold;
+  font-size: 1.6rem;
+
+  transition: background-color 0.2s;
+}
+
+button:focus {
+  outline: none;
+  border: 2px solid var(--color-dark-gray);
+}
+
+button:hover {
+  background-color: var(--color-orange);
+  cursor: pointer;
+}
+
+.resultsContainer {
+  padding: 1rem;
+}
+
+.results {
+  border: 2px solid var(--color-orange);
+  border-radius: 1rem;
+}
+
+.results + .results {
+  margin-top: 2rem;
+}
+
+.results h1 {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.results ul {
+  width: 20rem;
+  margin: 0 auto 1rem;
+}
+
+.results ul li {
+  font-size: 1.4rem;
+}
+
+.results ul li + li {
+  margin-top: 0.5rem;
+}
+
 footer {
   margin-top: 0.5rem;
   background-color: var(--color-dark-gray);
@@ -206,6 +268,6 @@ footer {
 
 @media screen and (max-width: 320px) {
   :root {
-    font-size: 40%;
+    font-size: 44%;
   }
 }
