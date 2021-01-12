@@ -297,6 +297,11 @@ function process(e, form) {
 
   const totalMeat = formulas.totalMeat(adults, kids);
 
+  if (adults === 0 && kids === 0) {
+    alert("Não há churrasco sem ninguém!");
+    return;
+  }
+
   let anyOptionSelected = false;
 
   for (let i = 0; i < meatOptions.length; i++) {
