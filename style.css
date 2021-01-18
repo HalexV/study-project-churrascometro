@@ -65,6 +65,7 @@ fieldset {
   display: flex;
   padding: 0 0.5rem;
   justify-content: center;
+  position: relative;
 }
 
 fieldset + fieldset {
@@ -81,6 +82,56 @@ fieldset legend {
   margin-bottom: 0.5rem;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  height: 3.4rem;
+  width: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tooltip img {
+  width: 100%;
+  height: auto;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  right: 110%;
+  width: 20rem;
+  text-align: center;
+  border-radius: 1rem;
+  z-index: 1;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.7);
+  transform: translateY(-50%);
 }
 
 fieldset img {
